@@ -1,0 +1,17 @@
+Type 'node index' in terminal at the location.
+
+Start tax api in browser:
+
+http://localhost:8081/api/tax
+
+Use postman to test
+
+DataBase : tax
+collection: taxusers
+
+'mongodb'
+
+show dbs
+use tax
+show collectios
+db.taxusers.find().pretty();
