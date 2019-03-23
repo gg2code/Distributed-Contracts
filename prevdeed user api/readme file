@@ -1,0 +1,17 @@
+Type 'node index' in terminal at the location.
+
+Start prev deed api in browser:
+
+http://localhost:8081/api/prevdeed
+
+Use postman to test
+
+DataBase : prevdeed
+collection: prevdeedusers
+
+'mongodb'
+
+show dbs
+use prevdeed
+show collectios
+db.prevdeedusers.find().pretty();
