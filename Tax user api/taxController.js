@@ -90,7 +90,7 @@ tax_user.findById(req.params.tax_id, function (err, contact) {
     });
 };
 
-// Handle delete contact
+// Handle delete user info
 exports.delete = function (req, res) {
     tax_user.remove({
         _id: req.params.tax_id
