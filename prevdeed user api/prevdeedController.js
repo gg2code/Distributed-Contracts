@@ -1,4 +1,4 @@
-// Import contact model
+// Import prevdeed model
 prevdeed_user = require('./prevdeedModel');
 
 // Handle index actions
@@ -18,7 +18,7 @@ exports.index = function (req, res) {
     });
 };
 
-// Handle create contact actions
+// Handle create prevdeed user actions
 exports.new = function (req, res) {
     var prevdeeduser = new prevdeed_user();
     prevdeeduser.land_id = req.body.land_id;
@@ -31,7 +31,7 @@ exports.new = function (req, res) {
     prevdeeduser.coordinate_two = req.body.coordinate_two;
     prevdeeduser.area = req.body.area;
 
-// save the contact and check for errors
+// save the user and check for errors
     prevdeeduser.save(function (err) {
         // if (err)
         //     res.json(err);
@@ -43,7 +43,7 @@ res.json({
     });
 };
 
-// Handle view contact info
+// Handle view user info
 exports.view = function (req, res) {
     prevdeed_user.findById(req.params.prevdeed_user_id, function (err, prevdeeduser) {
         if (err)
@@ -55,7 +55,7 @@ exports.view = function (req, res) {
     });
 };
 
-// Handle update contact info
+// Handle update user info
 exports.update = function (req, res) {
 
 prevdeed_user.findById(req.params.prevdeed_user_id, function (err, prevdeeduser) {
@@ -73,7 +73,7 @@ prevdeed_user.findById(req.params.prevdeed_user_id, function (err, prevdeeduser)
     	prevdeeduser.coordinate_two = req.body.coordinate_two;
     	prevdeeduser.area = req.body.area;
 
-// save the contact and check for errors
+// save the user and check for errors
         prevdeeduser.save(function (err) {
             if (err)
                 res.json(err);
@@ -85,7 +85,7 @@ prevdeed_user.findById(req.params.prevdeed_user_id, function (err, prevdeeduser)
     });
 };
 
-// Handle delete contact
+// Handle delete user
 exports.delete = function (req, res) {
     prevdeed_user.remove({
         _id: req.params.prevdeed_user_id
