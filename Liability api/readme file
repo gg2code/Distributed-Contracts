@@ -1,0 +1,17 @@
+Type 'node index' in terminal at the location.
+
+Start liability api in browser:
+
+http://localhost:8083/api/liability
+
+Use postman to test
+
+DataBase : liability
+collection: liabilityusers
+
+'mongodb'
+
+show dbs
+use liability
+show collectios
+db.liabilityusers.find().pretty();
