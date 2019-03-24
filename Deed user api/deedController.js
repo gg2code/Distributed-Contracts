@@ -18,7 +18,7 @@ exports.index = function (req, res) {
     });
 };
 
-// Handle create contact actions
+// Handle create deed user actions
 exports.new = function (req, res) {
     var deeduser = new deed_user();
     deeduser.land_id = req.body.land_id;
@@ -31,7 +31,7 @@ exports.new = function (req, res) {
     deeduser.coordinate_two = req.body.coordinate_two;
     deeduser.area = req.body.area;
 
-// save the contact and check for errors
+// save the user and check for errors
     deeduser.save(function (err) {
         // if (err)
         //     res.json(err);
@@ -43,7 +43,7 @@ res.json({
     });
 };
 
-// Handle view contact info
+// Handle view deed user info
 exports.view = function (req, res) {
     deed_user.findById(req.params.deed_user_id, function (err, deeduser) {
         if (err)
@@ -55,7 +55,7 @@ exports.view = function (req, res) {
     });
 };
 
-// Handle update contact info
+// Handle update deed user info
 exports.update = function (req, res) {
 
 deed_user.findById(req.params.deed_user_id, function (err, deeduser) {
@@ -73,7 +73,7 @@ deed_user.findById(req.params.deed_user_id, function (err, deeduser) {
     	deeduser.coordinate_two = req.body.coordinate_two;
     	deeduser.area = req.body.area;
 
-// save the contact and check for errors
+// save the user and check for errors
         deeduser.save(function (err) {
             if (err)
                 res.json(err);
@@ -85,7 +85,7 @@ deed_user.findById(req.params.deed_user_id, function (err, deeduser) {
     });
 };
 
-// Handle delete contact
+// Handle delete deed user
 exports.delete = function (req, res) {
     deed_user.remove({
         _id: req.params.deed_user_id
