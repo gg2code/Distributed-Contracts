@@ -1,0 +1,49 @@
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
+
+
+MongoClient.connect(url, function(err, db) {  
+if (err) throw err;  
+
+
+
+var x = "1001"
+
+
+var query = ({
+    "land_id": x
+}); 
+
+
+
+var dbo = db.db("deed");
+dbo.collection("deedusers").find(query).toArray(function(err, result) {  
+if (err) throw err;  
+else if(result.length >0)
+	console.log(result);  
+	
+  
+
+
+const name = result[0].name;
+var email = result[0].email;
+var adhar_number = result[0].adhar_number;
+var gender = result[0].gender;
+var phone = result[0].phone;
+var coordinate_one = result[0].coordinate_one;
+var coordinate_two = result[0].coordinate_two;
+var area = result[0].area;
+
+
+
+console.log(name);
+console.log(phone);
+console.log(email);
+console.log(gender);
+console.log(coordinate_one);
+console.log(coordinate_two);
+console.log(area);   
+
+});  
+}); 
